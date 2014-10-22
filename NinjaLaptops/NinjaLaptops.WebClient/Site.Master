@@ -11,7 +11,7 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -75,8 +75,26 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+
+            <footer class="text-center">
+                <small>
+                    <strong>Author:</strong>
+                    <a href="https://github.com/TeamFranzKafka/NinjaLaptops" target="_blank" class="ng-binding">Team "Franz Kafka"</a>, 
+            <strong>Copyright:</strong>
+                    <a href="http://telerikacademy.com/" target="_blank" class="ng-binding">Telerik Academy 2014 &copy;</a>
+                </small>
+                <br>
+                <small>
+                    <strong>
+                        <a href="https://github.com/TeamFranzKafka/NinjaLaptops" target="_blank">Open Source Project</a> 
+                        powered by:
+
+                    </strong> 
+                    <a href="http://www.asp.net/web-forms" target="_blank">ASP.NET Web Forms</a> 
+                    and 
+                    <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>
+                </small>
+                <br>
             </footer>
         </div>
     </form>
