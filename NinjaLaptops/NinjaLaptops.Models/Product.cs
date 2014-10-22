@@ -6,6 +6,8 @@
 
         public string Model { get; set; }
 
+        public string PictureLink { get; set; }
+
         public decimal Price { get; set; }
 
         public int BrandId { get; set; }
