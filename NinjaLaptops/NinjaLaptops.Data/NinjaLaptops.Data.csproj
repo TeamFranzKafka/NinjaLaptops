@@ -57,10 +57,6 @@
     <Compile Include="NinjaLaptopsData.cs" />
     <Compile Include="Repositories\EfRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
-    <Compile Include="Migrations\201410221739199_InitialCreate.cs" />
-    <Compile Include="Migrations\201410221739199_InitialCreate.Designer.cs">
-      <DependentUpon>201410221739199_InitialCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -73,11 +69,6 @@
       <Project>{49b5bc8b-eb60-4fed-b358-9aa11dcfbc27}</Project>
       <Name>NinjaLaptops.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201410221739199_InitialCreate.resx">
-      <DependentUpon>201410221739199_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
