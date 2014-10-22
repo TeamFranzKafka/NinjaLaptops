@@ -169,7 +169,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
-    <Content Include="Admin\Web.config" />
+    <Content Include="AdminControllers\Web.config" />
+    <Content Include="PublicControllers\Web.config" />
+    <Content Include="LoggedUsersControllers\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -348,7 +350,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="LoggedUsers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NinjaLaptops.Data\NinjaLaptops.Data.csproj">
