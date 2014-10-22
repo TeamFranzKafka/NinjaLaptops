@@ -16,7 +16,7 @@ namespace NinjaLaptops.WebClient
         // Used for XSRF when linking external logins
         public const string XsrfKey = "XsrfId";
 
-        public static void SignIn(ApplicationUserManager manager, ApplicationUser user, bool isPersistent)
+        public static void SignIn(ApplicationUserManager manager, User user, bool isPersistent)
         {
             IAuthenticationManager authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
             authenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);

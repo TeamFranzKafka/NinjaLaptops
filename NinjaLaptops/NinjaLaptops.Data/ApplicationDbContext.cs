@@ -7,7 +7,7 @@
     using NinjaLaptops.Models;
     using NinjaLaptops.Data.Migrations;
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -19,5 +19,11 @@
         {
             return new ApplicationDbContext();
         }
+
+        public IDbSet<Brand> Brands { get; set; }
+
+        public IDbSet<Product> Products { get; set; }
+
+        public IDbSet<Order> Orders { get; set; }
     }
 }

@@ -1,13 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NinjaLaptops.Models
+﻿namespace NinjaLaptops.Models
 {
+    using System;
+    using System.Collections.Generic;
+
     public class Order
     {
-        //TODO
+        private ICollection<Product> products;
+
+        public Order() {
+            this.Products = new HashSet<Product>();
+        }
+
+        public int OrderId { get; set; }
+
+        public Guid UserId { get; set; }
+
+        public virtual User User { get; set; }
+
+        public virtual ICollection<Product> Products
+        {
+            get
+            {
+                return this.products;
+            }
+
+            set
+            {
+                this.products = value;
+            }
+        }
+
     }
 }

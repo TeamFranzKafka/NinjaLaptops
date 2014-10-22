@@ -4,7 +4,7 @@
 
     public interface INinjaLaptopsData
     {
-        IRepository<ApplicationUser> ApplicationUsers { get; }
+        IRepository<User> Users { get; }
 
         IRepository<Brand> Brands { get; }
 
