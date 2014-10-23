@@ -160,6 +160,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="AdminControllers\CreateBrand.aspx" />
     <Content Include="AdminControllers\CreateLaptop.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -332,6 +333,13 @@
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminControllers\CreateBrand.aspx.cs">
+      <DependentUpon>CreateBrand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminControllers\CreateBrand.aspx.designer.cs">
+      <DependentUpon>CreateBrand.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminControllers\CreateLaptop.aspx.cs">
       <DependentUpon>CreateLaptop.aspx</DependentUpon>

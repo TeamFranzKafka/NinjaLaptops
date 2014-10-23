@@ -27,9 +27,6 @@ namespace NinjaLaptops.WebClient.AdminControllers
         {
             if (IsValid)
             {
-                //TODO: add file upload
-             
-
                 if (this.UploadImage.HasFile)
                 {
                     if (this.UploadImage.PostedFile.ContentType == "image/jpeg" ||
