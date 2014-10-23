@@ -168,6 +168,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Controls\ProductView.ascx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\basket.png" />
+    <Content Include="Images\sorting.png" />
     <Content Include="Images\super_ninja.png" />
     <Content Include="LaptopDetails.aspx" />
     <Content Include="Laptops.aspx" />

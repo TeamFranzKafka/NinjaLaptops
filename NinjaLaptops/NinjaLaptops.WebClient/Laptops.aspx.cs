@@ -22,6 +22,11 @@ namespace NinjaLaptops.WebClient
                 this.ListViewLaptops.DataSource = data.Products.All().ToList();
                 this.DataBind();
             }
+            else
+            {
+                ErrorSuccessNotifier.AddSuccessMessage("Product added to basket!!!");
+          
+            }
         }
 
         protected void CheckBoxBrands_SelectedIndexChanged(object sender, EventArgs e)

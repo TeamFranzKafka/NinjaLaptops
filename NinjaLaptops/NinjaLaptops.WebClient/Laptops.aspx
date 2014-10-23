@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Laptops.aspx.cs" Inherits="NinjaLaptops.WebClient.Laptops" %>
 
 <%@ Register Src="~/Notifier/ErrorSuccessNotifier/ErrorSuccessNotifier.ascx" TagPrefix="ninja" TagName="ErrorSuccessNotifier" %>
-
+<%@ OutputCache Duration="60" VaryByParam="none" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
