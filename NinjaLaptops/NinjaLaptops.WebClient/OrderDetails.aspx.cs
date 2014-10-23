@@ -31,8 +31,9 @@ namespace NinjaLaptops.WebClient
         public IQueryable<Product> GridViewOrderedProducts_GetData()
         {
             var userId = HttpContext.Current.User.Identity.GetUserId();
+            var currentUser = data.Users.GetById(userId);
 
-            var orders = data.Orders.All().FirstOrDefault(o => o.UserId == userId).Products.AsQueryable();
+            var orders = currentUser.Products.AsQueryable();
             return orders;
         }
 
@@ -42,9 +43,10 @@ namespace NinjaLaptops.WebClient
             {
                 int productId = Convert.ToInt32(e.CommandArgument);
                 var userId = HttpContext.Current.User.Identity.GetUserId();
-                var order = data.Orders.All().FirstOrDefault(o => o.UserId == userId);
+                var currentUser = data.Users.GetById(userId);
+
                 var product = data.Products.GetById(productId);
-                order.Products.Remove(product);
+                currentUser.Products.Remove(product);
                 data.SaveChanges();
                 ErrorSuccessNotifier.AddInfoMessage("Product successfully deleted from basket.");
             }
@@ -70,10 +72,11 @@ namespace NinjaLaptops.WebClient
         protected void ButtonBuyOrder_Click(object sender, EventArgs e)
         {
             var userId = HttpContext.Current.User.Identity.GetUserId();
-            var order = data.Orders.All().FirstOrDefault(o => o.UserId == userId);
-            if (order.Products.Count > 0)
+           
+            var currentUser = data.Users.GetById(userId);
+            if (currentUser.Products.Count > 0)
             {
-                order.Products = new HashSet<Product>();
+                currentUser.Products = new HashSet<Product>();
                 data.SaveChanges();
                 ErrorSuccessNotifier.AddSuccessMessage("You spend your money successfully!!! Congrats");
                 Response.Redirect("/");
