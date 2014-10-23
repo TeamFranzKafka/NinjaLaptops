@@ -22,5 +22,6 @@ namespace NinjaLaptops.WebClient.Controls
         }
 
         public IEnumerable<Product> DataSource { get; set; }
+
     }
 }
