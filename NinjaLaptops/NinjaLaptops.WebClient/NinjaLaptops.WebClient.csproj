@@ -355,6 +355,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Notifier\ErrorSuccessNotifier\ErrorSuccessNotifier.ascx.cs">
       <DependentUpon>ErrorSuccessNotifier.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Notifier\ErrorSuccessNotifier\ErrorSuccessNotifier.ascx.designer.cs">
       <DependentUpon>ErrorSuccessNotifier.ascx</DependentUpon>
