@@ -19,8 +19,6 @@ namespace NinjaLaptops.WebClient.AdminControllers
 
             if (!Page.IsPostBack)
             {
-                this.data = new NinjaLaptopsData();
-
                 var brands = data.Brands.All().ToList();
                 this.DropDownListBrands.DataSource = brands;
                 this.DropDownListBrands.DataBind();
