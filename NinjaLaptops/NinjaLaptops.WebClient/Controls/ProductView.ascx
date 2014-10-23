@@ -3,6 +3,7 @@
 <asp:DetailsView runat="server" 
     ID="DetailsViewLaptop" 
     AutoGenerateRows="true" 
+     AutoGenerateColumns="true"
     ItemType="NinjaLaptops.Models.Product">
 
 </asp:DetailsView>

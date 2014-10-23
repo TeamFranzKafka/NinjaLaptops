@@ -17,7 +17,7 @@ namespace NinjaLaptops.WebClient
             var data = new NinjaLaptopsData();
 
             int selectedLaptopId = int.Parse(Request.Params["id"]);
-            Product selectedLaptop = data.Products.All().FirstOrDefault(p => p.BrandId == selectedLaptopId);
+            Product selectedLaptop = data.Products.All().FirstOrDefault(p => p.ProductId == selectedLaptopId);
 
             this.ProductViewLaptop.DataSource = new List<Product>() { selectedLaptop };
             this.ProductViewLaptop.DataBind();

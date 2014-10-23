@@ -22,3 +22,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
         border-radius: 10px;
         box-shadow: 5px 5px 5px #888888;
     }
+
+.menu {
+    position: fixed;
+    margin: 10px;
+    width: 180px;
+}
+
+.menu label {
+    margin: 10px
+}
