@@ -29,11 +29,11 @@
                             <div class="col-md-3 text-center list-item-border">
                                 <div class="list-item">
                                     <a href="<%# "/LaptopDetails?id=" + Item.ProductId %>">
-                                        <h3><%#: Item.Model %></h3>
+                                        <h4><%#: Item.Model %></h4>
                                         <img src="<%#: Item.PictureLink %>" alt="<%#: Item.Model %>" />
                                         <br />
                                         <br />
-                                        <div><%#: Item.Price %>$</div>
+                                        <div><%#: Item.Price %> лв.</div>
                                     </a>
                                 </div>
                                 <asp:LinkButton ID="LinkButtonOrderProduct"

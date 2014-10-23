@@ -35,7 +35,7 @@
 
                                 <asp:TemplateField HeaderText="Picture" FooterText="Total:">
                                     <ItemTemplate>
-                                        <img src='<%#Eval("PictureLink") %>' runat="server" />
+                                        <img  src='<%#Eval("PictureLink") %>' runat="server" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
@@ -48,7 +48,7 @@
                                             Text="Remove"
                                             CommandArgument="<%# Item.ProductId %>"
                                             OnClientClick="return confirm('Do you want to delete?');"
-                                            OnCommand="LinkButtonDeleteOrder_Command" />
+                                            OnCommand="LinkButtonDeleteOrder_Command" CssClass="btn btn-danger"/>
 
                                     </ItemTemplate>
                                 </asp:TemplateField>

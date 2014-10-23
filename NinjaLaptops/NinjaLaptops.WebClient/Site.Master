@@ -58,7 +58,7 @@
                         <li><a runat="server" href="~/Laptops">Laptops</a></li>
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <LoggedInTemplate>
-                                <li><a runat="server" href="~/OrderDetails">My basket</a></li>
+                                <li><a runat="server" href="~/OrderDetails">My basket </a></li>
                             </LoggedInTemplate>
                         </asp:LoginView>
                     </ul>

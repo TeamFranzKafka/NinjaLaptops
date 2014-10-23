@@ -20,7 +20,9 @@
     .list-item img {
         border: 1px solid white;
         border-radius: 10px;
-        box-shadow: 5px 5px 5px #888888;
+        box-shadow: 2px 2px 3px #888888;
+        width: 150px;
+        height: 120px;
     }
 
 .menu {
@@ -48,3 +50,27 @@
     height: 300px;
 }
 
+.icon {
+    width: 10%;
+    height: 10%;
+}
+
+table#MainContent_ctl00_GridViewOrderedProducts {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+table#MainContent_ctl00_GridViewOrderedProducts tr:nth-child(2n+1) {
+    background-color: #f7f5f5;
+}
+
+table#MainContent_ctl00_GridViewOrderedProducts th {
+    font-size: 16px;
+}
+
+table img {
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 150px;
+    height: 120px;
+}
