@@ -39,6 +39,9 @@
     width: 100%;
 }
 
+#orders > div > table th a {
+     
+}
 
 .image-container img {
     margin-top: 20px;

@@ -73,6 +73,7 @@ namespace NinjaLaptops.WebClient
                         return;
                     }
                 }
+
                 currentUser.Products.Add(product);
                 
                 data.SaveChanges();
