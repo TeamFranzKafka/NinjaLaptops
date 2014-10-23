@@ -62,7 +62,7 @@
                             <asp:RoleGroup Roles="admin">
                                 <ContentTemplate>
                                     <ul class="nav navbar-nav navbar-right">
-                                        <li><a runat="server" href="~/Account/CreateLaptop" title="Create Laptop">Create Laptop</a></li>
+                                        <li><a runat="server" href="~/AdminControllers/CreateLaptop" title="Create Laptop">Create Laptop</a></li>
 
                                         <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                         <li>
