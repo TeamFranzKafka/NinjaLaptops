@@ -57,7 +57,7 @@ namespace NinjaLaptops.WebClient
             {
                 ErrorSuccessNotifier.AddErrorMessage(ex);
             }
-            Response.Redirect("/OrderDetails");
+            //Response.Redirect("/OrderDetails");
         }
 
         protected void GridViewOrderedProducts_RowDataBound(object sender, GridViewRowEventArgs e)

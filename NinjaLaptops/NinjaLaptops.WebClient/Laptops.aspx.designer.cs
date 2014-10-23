@@ -13,6 +13,15 @@ namespace NinjaLaptops.WebClient {
     public partial class Laptops {
         
         /// <summary>
+        /// UpdatePanelFilterBrands control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelFilterBrands;
+        
+        /// <summary>
         /// CheckBoxBrands control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace NinjaLaptops.WebClient {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxBrands;
+        
+        /// <summary>
+        /// UpdatePanelListComputers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelListComputers;
         
         /// <summary>
         /// ListViewLaptops control.
