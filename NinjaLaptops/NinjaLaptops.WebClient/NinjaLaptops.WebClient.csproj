@@ -175,6 +175,7 @@
     <Content Include="Notifier\ErrorSuccessNotifier\Scripts\ErrorSuccessNotifier.js" />
     <Content Include="Notifier\ErrorSuccessNotifier\Scripts\jquery-1.3.2.js" />
     <Content Include="Notifier\ErrorSuccessNotifier\Styles\ErrorSuccessNotifier.css" />
+    <Content Include="OrderDetails.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -361,12 +362,20 @@
       <DependentUpon>Laptops.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Notifier\ErrorSuccessNotifier\ErrorSuccessNotifier.ascx.cs">
       <DependentUpon>ErrorSuccessNotifier.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Notifier\ErrorSuccessNotifier\ErrorSuccessNotifier.ascx.designer.cs">
       <DependentUpon>ErrorSuccessNotifier.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetails.aspx.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderDetails.aspx.designer.cs">
+      <DependentUpon>OrderDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

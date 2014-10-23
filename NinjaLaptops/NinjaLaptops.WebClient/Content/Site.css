@@ -36,3 +36,12 @@ input[type="select"] {
         padding: 0;
     }
 }
+img{
+    width:100px;
+    height:100px;
+}
+#MainContent_ButtonBuyOrder{
+    background-color:green;
+    width:100px;
+    height:50px;
+}
