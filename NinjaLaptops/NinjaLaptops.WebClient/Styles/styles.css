@@ -35,12 +35,8 @@
         margin: 10px;
     }
 
-#orders table {
+#orders > div > table {
     width: 100%;
-}
-
-
-#orders th a {
 }
 
 
@@ -60,17 +56,30 @@ table#MainContent_ctl00_GridViewOrderedProducts {
     margin-bottom: 10px;
 }
 
-table#MainContent_ctl00_GridViewOrderedProducts tr:nth-child(2n+1) {
-    background-color: #f7f5f5;
-}
+    table#MainContent_ctl00_GridViewOrderedProducts > tbody > tr:nth-child(2n+1) {
+        background-color: #f7f5f5;
+    }
 
-table#MainContent_ctl00_GridViewOrderedProducts th {
-    font-size: 16px;
-}
+    table#MainContent_ctl00_GridViewOrderedProducts th {
+        font-size: 16px;
+    }
 
 table img {
     border: 1px solid white;
     border-radius: 10px;
     width: 150px;
     height: 120px;
+}
+
+table table {
+    width: 5%;
+}
+
+table table td {
+    text-align: center;
+}
+
+table table td:hover {
+    background-color: #e2dcdc;
+    text-align: center;
 }
