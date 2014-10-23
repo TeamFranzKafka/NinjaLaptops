@@ -165,8 +165,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Controls\ProductView.ascx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\super_ninja.png" />
+    <Content Include="LaptopDetails.aspx" />
     <Content Include="Laptops.aspx" />
     <Content Include="Notifier\ErrorSuccessNotifier\ErrorSuccessNotifier.ascx" />
     <Content Include="Notifier\ErrorSuccessNotifier\Images\error-icon.png" />
@@ -352,6 +354,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controls\ProductView.ascx.cs">
+      <DependentUpon>ProductView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ProductView.ascx.designer.cs">
+      <DependentUpon>ProductView.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -361,6 +370,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LaptopDetails.aspx.cs">
+      <DependentUpon>LaptopDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LaptopDetails.aspx.designer.cs">
+      <DependentUpon>LaptopDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Laptops.aspx.cs">
       <DependentUpon>Laptops.aspx</DependentUpon>

@@ -10,9 +10,11 @@
         </LayoutTemplate>
         <ItemTemplate>
             <div>
-                <h2> <%#: Item.Model %></h2>
-                <img src="<%#: Item.PictureLink %>" alt="<%#: Item.Model %>" />
-                <div><%#: Item.Price %></div>
+                <a href="<%# "/LaptopDetails?id=" + Item.BrandId %>">
+                    <h2> <%#: Item.Model %></h2>
+                    <img src="<%#: Item.PictureLink %>" alt="<%#: Item.Model %>" />
+                    <div><%#: Item.Price %></div>
+                </a>
             </div>
             <asp:LinkButton ID="LinkButtonOrderProduct"
                                 runat="server"
