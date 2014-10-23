@@ -17,9 +17,14 @@ namespace NinjaLaptops.WebClient.AdminControllers
         {
             this.data = new NinjaLaptopsData();
 
-            var brands = data.Brands.All().ToList();
-            this.DropDownListBrands.DataSource = brands;
-            this.DropDownListBrands.DataBind();
+            if (!Page.IsPostBack)
+            {
+                this.data = new NinjaLaptopsData();
+
+                var brands = data.Brands.All().ToList();
+                this.DropDownListBrands.DataSource = brands;
+                this.DropDownListBrands.DataBind();
+            }
         }
 
 
