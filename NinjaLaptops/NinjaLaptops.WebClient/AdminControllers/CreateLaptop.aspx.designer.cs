@@ -13,6 +13,15 @@ namespace NinjaLaptops.WebClient.AdminControllers {
     public partial class CreateLaptop {
         
         /// <summary>
+        /// DropDownListBrands control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListBrands;
+        
+        /// <summary>
         /// ErrorMessage control.
         /// </summary>
         /// <remarks>
@@ -47,15 +56,6 @@ namespace NinjaLaptops.WebClient.AdminControllers {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Price;
-        
-        /// <summary>
-        /// DropDownListBrands control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListBrands;
         
         /// <summary>
         /// UploadImage control.

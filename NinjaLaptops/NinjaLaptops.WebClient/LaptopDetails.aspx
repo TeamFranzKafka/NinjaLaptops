@@ -9,8 +9,10 @@
         <RoleGroups>
             <asp:RoleGroup Roles="admin">
                 <ContentTemplate>
-                    <asp:Button ID="ButtonDeleteProduct" Text="Delete" runat="server" OnClientClick="return confirm('Do you want to delete?');" OnClick="ButtonDeleteProduct_Click" />
-                    <asp:Button ID="ButtonEditProduct" Text="Edit" runat="server" OnClick="ButtonEditProduct_Click" />
+                    <div class="text-center">
+                        <asp:Button ID="ButtonEditProduct" CssClass="btn btn-success" Text="Edit" runat="server" OnClick="ButtonEditProduct_Click" />
+                        <asp:Button ID="ButtonDeleteProduct" CssClass="btn btn-danger" Text="Delete" runat="server" OnClientClick="return confirm('Do you want to delete?');" OnClick="ButtonDeleteProduct_Click" />
+                    </div>
                 </ContentTemplate>
             </asp:RoleGroup>
         </RoleGroups>
