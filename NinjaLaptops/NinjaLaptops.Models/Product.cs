@@ -14,7 +14,7 @@
 
         public virtual Brand Brand { get; set; }
 
-        public int OrderId { get; set; }
+        public int? OrderId { get; set; }
 
         public virtual Order Oreder { get; set; }
     }
