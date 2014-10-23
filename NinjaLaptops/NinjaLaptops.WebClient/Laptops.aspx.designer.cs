@@ -20,5 +20,14 @@ namespace NinjaLaptops.WebClient {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.BulletedList BulletedListBrands;
+        
+        /// <summary>
+        /// ListViewLaptops control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ListViewLaptops;
     }
 }

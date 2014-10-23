@@ -15,8 +15,17 @@ namespace NinjaLaptops.WebClient
             var data = new NinjaLaptopsData();
 
             this.BulletedListBrands.DataSource = data.Brands.All().ToList();
+            this.ListViewLaptops.DataSource = data.Products.All().ToList();
 
-            this.BulletedListBrands.DataBind();
+            this.DataBind();
+        }
+
+        protected void BulletedListBrands_Click(object sender, BulletedListEventArgs e)
+        {
+            var data = new NinjaLaptopsData();
+
+            this.ListViewLaptops.DataSource = data.Products.All().Where(p => p.BrandId == e.Index).ToList();
+            this.ListViewLaptops.DataBind();
         }
     }
 }
