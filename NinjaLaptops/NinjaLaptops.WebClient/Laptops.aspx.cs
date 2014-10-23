@@ -53,10 +53,16 @@ namespace NinjaLaptops.WebClient
         protected void LinkButtonOrderProduct_Command(object sender, CommandEventArgs e)
         {
             var data = new NinjaLaptopsData();
+            var userId = HttpContext.Current.User.Identity.GetUserId();
+            if (userId == null)
+            {
+                ErrorSuccessNotifier.AddWarningMessage("You are not logged in!");
+                return;
+            }
             try
             {
                 int productId = Convert.ToInt32(e.CommandArgument);
-                var userId = HttpContext.Current.User.Identity.GetUserId();
+               
                 var currentUser = data.Users.GetById(userId);
                 var product = data.Products.GetById(productId);
                 foreach (var currentProduct in currentUser.Products)
@@ -76,6 +82,11 @@ namespace NinjaLaptops.WebClient
             {
                 ErrorSuccessNotifier.AddErrorMessage(ex);
             }
+        }
+
+        protected void LinkButtonOrderProduct_Command1(object sender, CommandEventArgs e)
+        {
+
         }
     }
 }

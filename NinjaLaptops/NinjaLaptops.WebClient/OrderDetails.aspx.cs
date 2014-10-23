@@ -26,10 +26,18 @@ namespace NinjaLaptops.WebClient
         public IQueryable<Product> GridViewOrderedProducts_GetData()
         {
             var userId = HttpContext.Current.User.Identity.GetUserId();
-            var currentUser = data.Users.GetById(userId);
+            if (userId != null)
+            {
+                var currentUser = data.Users.GetById(userId);
 
-            var orders = currentUser.Products.AsQueryable();
-            return orders;
+                var orders = currentUser.Products.AsQueryable();
+                return orders;
+            }
+            else
+            {
+                return null;
+            }
+            
         }
 
         public void LinkButtonDeleteOrder_Command(object sender, CommandEventArgs e)
