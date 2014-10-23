@@ -1,5 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="NinjaLaptops.WebClient.SiteMaster" %>
 
+<%@ Register Src="~/Notifier/ErrorSuccessNotifier/ErrorSuccessNotifier.ascx" TagPrefix="ninja" TagName="ErrorSuccessNotifier" %>
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -72,6 +75,9 @@
             </div>
         </div>
         <div class="container body-content">
+
+            <ninja:errorsuccessnotifier runat="server" id="ErrorSuccessNotifier" />
+
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
