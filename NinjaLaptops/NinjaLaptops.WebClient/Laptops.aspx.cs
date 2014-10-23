@@ -83,10 +83,5 @@ namespace NinjaLaptops.WebClient
                 ErrorSuccessNotifier.AddErrorMessage(ex);
             }
         }
-
-        protected void LinkButtonOrderProduct_Command1(object sender, CommandEventArgs e)
-        {
-
-        }
     }
 }

@@ -3,28 +3,32 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <asp:CheckBoxList ID="CheckBoxBrands" runat="server" DataTextField="BrandName" DataValueField="BrandId" AutoPostBack="true" OnSelectedIndexChanged="CheckBoxBrands_SelectedIndexChanged"></asp:CheckBoxList>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-10">
             <asp:ListView ID="ListViewLaptops" runat="server" ItemType="NinjaLaptops.Models.Product">
                 <LayoutTemplate>
-                    <h3>Name</h3>
                     <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
                 </LayoutTemplate>
                 <ItemTemplate>
-                    <div>
-                        <a href="<%# "/LaptopDetails?id=" + Item.BrandId %>">
-                            <h2><%#: Item.Model %></h2>
-                            <img src="<%#: Item.PictureLink %>" alt="<%#: Item.Model %>" />
-                            <div><%#: Item.Price %></div>
-                        </a>
+                    <div class="col-md-3 text-center list-item-border">
+                        <div class="list-item">
+                            <a href="<%# "/LaptopDetails?id=" + Item.BrandId %>">
+                                <h3><%#: Item.Model %></h3>
+                                <img src="<%#: Item.PictureLink %>" alt="<%#: Item.Model %>" />
+                                <br />
+                                <br />
+                                <div><%#: Item.Price %>$</div>
+                            </a>
+                        </div>
+                        <asp:LinkButton ID="LinkButtonOrderProduct"
+                            runat="server"
+                            Text="Add To Basket"
+                            CommandArgument="<%# Item.ProductId %>"
+                            OnCommand="LinkButtonOrderProduct_Command" CssClass="btn btn-primary"/>
+
                     </div>
-                    <asp:LinkButton ID="LinkButtonOrderProduct"
-                        runat="server"
-                        Text="Add To Basket"
-                        CommandArgument="<%# Item.ProductId %>"
-                        OnCommand="LinkButtonOrderProduct_Command" />
                 </ItemTemplate>
 
             </asp:ListView>
