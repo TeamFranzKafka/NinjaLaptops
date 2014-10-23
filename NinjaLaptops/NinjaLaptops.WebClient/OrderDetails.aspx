@@ -4,13 +4,17 @@
     CodeBehind="OrderDetails.aspx.cs"
     Inherits="NinjaLaptops.WebClient.OrderDetails" %>
 
+<%@ Register Src="~/Notifier/ErrorSuccessNotifier/ErrorSuccessNotifier.ascx" TagPrefix="ninja" TagName="ErrorSuccessNotifier" %>
+
+
 <asp:Content ID="ContentOrderDetails" ContentPlaceHolderID="MainContent" runat="server">
     <asp:LoginView runat="server" ViewStateMode="Disabled">
         <LoggedInTemplate>
             <asp:UpdatePanel ID="UpdatePanel" runat="server" class="panel"
                 UpdateMode="Conditional">
-                <ContentTemplate>
+                <ContentTemplate>   
                     <div id="orders">
+                        <ninja:ErrorSuccessNotifier runat="server" ID="ErrorSuccessNotifier" />
                         <asp:GridView ID="GridViewOrderedProducts" runat="server"
                             AutoGenerateColumns="false"
                             AllowPaging="true"
@@ -38,7 +42,7 @@
                                         <img  src='<%#Eval("PictureLink") %>' runat="server" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
-
+                                 
                                 <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" DataFormatString="{0:c}" />
 
                                 <asp:TemplateField>
@@ -56,8 +60,9 @@
                         </asp:GridView>
                     </div>
                     <asp:Button ID="ButtonBuyOrder" Text="Buy" runat="server" CssClass="btn btn-success" OnClick="ButtonBuyOrder_Click" />
+                   
                 </ContentTemplate>
-             </asp:UpdatePanel>
+            </asp:UpdatePanel>
         </LoggedInTemplate>
                     
                 

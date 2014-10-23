@@ -26,8 +26,9 @@
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="DropDownListBrands" CssClass="col-md-2 control-label">Brand:</asp:Label>
                         <div class="col-md-10">
-                            <asp:DropDownList runat="server" ID="DropDownListBrands" DataTextField="BrandName" DataValueField="BrandId" CssClass="form-control" />          
+                            <asp:DropDownList runat="server" ID="DropDownListBrands" DataTextField="BrandName" DataValueField="BrandId" CssClass="form-control" />  
                         </div>
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="DropDownListBrands" CssClass="text-danger" ErrorMessage="The brand field is required." />
                     </div>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="UploadImage" CssClass="col-md-2 control-label">Image:</asp:Label>

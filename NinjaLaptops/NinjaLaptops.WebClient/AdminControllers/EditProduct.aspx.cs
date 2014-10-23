@@ -18,9 +18,12 @@ namespace NinjaLaptops.WebClient.AdminControllers
         {
             this.data = new NinjaLaptopsData();
 
-            var brands = data.Brands.All().ToList();
-            this.DropDownListBrands.DataSource = brands;
-            this.DropDownListBrands.DataBind();
+            if (!Page.IsPostBack)
+            {
+                var brands = data.Brands.All().ToList();
+                this.DropDownListBrands.DataSource = brands;
+                this.DropDownListBrands.DataBind();
+            }
         }
 
         protected void Updade_Click(object sender, EventArgs e)
@@ -35,19 +38,17 @@ namespace NinjaLaptops.WebClient.AdminControllers
                     if (this.UploadImage.PostedFile.ContentType == "image/jpeg" ||
                        this.UploadImage.PostedFile.ContentType == "image/gif" ||
                        this.UploadImage.PostedFile.ContentType == "image/png")
-                    {
-                        
-                     
-
-                    
+                    {             
                         var filename = product.Model + Path.GetExtension(this.UploadImage.FileName);
                         this.UploadImage.SaveAs(this.Server.MapPath("~/Uploads/Images/") + filename);
                         product.PictureLink = "Uploads/Images/" + filename;
-
-                    
                     }
                 }
-                product.BrandId = int.Parse(this.DropDownListBrands.SelectedValue);
+                var bratndId = int.Parse(this.DropDownListBrands.SelectedValue);
+                var newBrand = data.Brands.GetById(bratndId);
+                product.Brand = newBrand;
+                product.BrandId = bratndId;
+              
                 if (this.Model.Text != "")
                 {
                     product.Model = this.Model.Text;

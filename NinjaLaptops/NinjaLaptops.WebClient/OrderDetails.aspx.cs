@@ -51,7 +51,7 @@ namespace NinjaLaptops.WebClient
                 var product = data.Products.GetById(productId);
                 currentUser.Products.Remove(product);
                 data.SaveChanges();
-                ErrorSuccessNotifier.AddInfoMessage("Product successfully deleted from basket.");
+                ErrorSuccessNotifier.AddWarningMessage("Product successfully deleted from basket.");
             }
             catch (Exception ex)
             {

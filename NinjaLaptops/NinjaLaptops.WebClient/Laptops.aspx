@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Laptops.aspx.cs" Inherits="NinjaLaptops.WebClient.Laptops" %>
 
+<%@ Register Src="~/Notifier/ErrorSuccessNotifier/ErrorSuccessNotifier.ascx" TagPrefix="ninja" TagName="ErrorSuccessNotifier" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <div class="menu panel panel-primary">
@@ -17,6 +20,7 @@
         </div>
         <asp:UpdatePanel ID="UpdatePanelListComputers" runat="server">
             <ContentTemplate>
+           <%-- <ninja:ErrorSuccessNotifier runat="server" ID="ErrorSuccessNotifier" />--%>
                 <div class="col-md-2">
                 </div>
 
