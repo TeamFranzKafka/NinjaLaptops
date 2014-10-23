@@ -1,34 +1,22 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProductView.ascx.cs" Inherits="NinjaLaptops.WebClient.Controls.ProductView" %>
 
-<asp:DetailsView runat="server"
-    ID="DetailsViewLaptop"
-    AutoGenerateRows="false"
-    AutoGenerateColumns="false"
-    ItemType="NinjaLaptops.Models.Product">
-    <Fields>
-        <asp:TemplateField>
-            <ItemTemplate>
-                <img src="<%# Item.PictureLink %>" />
-            </ItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField>
-            <ItemTemplate>
-               <strong>Model: </strong> <%# Item.Model %>
-            </ItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField>
-            <ItemTemplate>
-               <strong>Price: </strong> <%# Item.Price %>
-            </ItemTemplate>
+<asp:ListView ID="DetailsViewLaptop" runat="server" ItemType="NinjaLaptops.Models.Product">
+    <ItemTemplate>
+        <div class="image-container">
+            <img src="<%# Item.PictureLink %>" />
+        </div>
+        <div class="details-container">
+            <p><strong>Model: </strong> <%# Item.Model %></p>
+            <p><strong>Price: </strong> <%# Eval("Price", "{0:C}") %></p>
+            <p><strong>Brand: </strong> <%# Item.Brand.BrandName %></p>
+        </div>
+    </ItemTemplate>
+    <LayoutTemplate>
+        <div class="span4" id="itemPlaceholder" runat="server">
 
-        </asp:TemplateField>
-        <asp:TemplateField>
-            <ItemTemplate>
-              <strong>Brand: </strong> <%# Item.Brand.BrandName %>
-            </ItemTemplate>
-        </asp:TemplateField>
-    </Fields>
-</asp:DetailsView>
+        </div>
+    </LayoutTemplate>
+</asp:ListView>
 
 
 
