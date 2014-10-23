@@ -22,6 +22,7 @@ namespace NinjaLaptops.WebClient.AdminControllers
             this.DropDownListBrands.DataBind();
         }
 
+
         protected void Create(object sender, EventArgs e)
         {
             if (IsValid)
