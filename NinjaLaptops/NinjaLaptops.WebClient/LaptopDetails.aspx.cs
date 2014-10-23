@@ -38,6 +38,7 @@ namespace NinjaLaptops.WebClient
             data.Products.Delete(product);
             data.SaveChanges();
             ErrorSuccessNotifier.AddSuccessMessage("Product successfully deleted.");
+            Response.Redirect("/Laptops");
             this.DataBind();
         }
 

@@ -14,7 +14,7 @@
                 <ItemTemplate>
                     <div class="col-md-3 text-center list-item-border">
                         <div class="list-item">
-                            <a href="<%# "/LaptopDetails?id=" + Item.BrandId %>">
+                            <a href="<%# "/LaptopDetails?id=" + Item.ProductId %>">
                                 <h3><%#: Item.Model %></h3>
                                 <img src="<%#: Item.PictureLink %>" alt="<%#: Item.Model %>" />
                                 <br />
