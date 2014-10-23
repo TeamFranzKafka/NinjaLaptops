@@ -14,20 +14,15 @@ namespace NinjaLaptops.WebClient
     public partial class OrderDetails : System.Web.UI.Page
     {
         private decimal TotalSales = (decimal)0.0;
-        static protected ApplicationDbContext context = new ApplicationDbContext();
-        protected NinjaLaptopsData data = new NinjaLaptopsData(context);
+        protected NinjaLaptopsData data = new NinjaLaptopsData();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.GridViewOrderedProducts_GetData();
+            this.DataBind();
         }
 
-        // The return type can be changed to IEnumerable, however to support
-        // paging and sorting, the following parameters must be added:
-        //     int maximumRows
-        //     int startRowIndex
-        //     out int totalRowCount
-        //     string sortByExpression
+
         public IQueryable<Product> GridViewOrderedProducts_GetData()
         {
             var userId = HttpContext.Current.User.Identity.GetUserId();

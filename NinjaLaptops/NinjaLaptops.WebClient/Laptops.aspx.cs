@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using NinjaLaptops.Data;
+using Microsoft.AspNet.Identity;
+using Error_Handler_Control;
 
 namespace NinjaLaptops.WebClient
 {
@@ -46,6 +48,34 @@ namespace NinjaLaptops.WebClient
 
             this.ListViewLaptops.DataBind();
 
+        }
+
+        protected void LinkButtonOrderProduct_Command(object sender, CommandEventArgs e)
+        {
+            var data = new NinjaLaptopsData();
+            try
+            {
+                int productId = Convert.ToInt32(e.CommandArgument);
+                var userId = HttpContext.Current.User.Identity.GetUserId();
+                var currentUser = data.Users.GetById(userId);
+                var product = data.Products.GetById(productId);
+                foreach (var currentProduct in currentUser.Products)
+                {
+                    if (currentProduct.ProductId == productId) 
+                    {
+                        ErrorSuccessNotifier.AddWarningMessage("You already added this product");
+                        return;
+                    }
+                }
+                currentUser.Products.Add(product);
+                
+                data.SaveChanges();
+                ErrorSuccessNotifier.AddSuccessMessage("Product added to basket!!!");
+            }
+            catch (Exception ex)
+            {
+                ErrorSuccessNotifier.AddErrorMessage(ex);
+            }
         }
     }
 }
