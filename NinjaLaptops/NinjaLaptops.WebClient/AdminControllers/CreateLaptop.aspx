@@ -36,13 +36,9 @@
                     </div>
 
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="DropDownListBrands" CssClass="col-md-2 control-label">Brand:</asp:Label>
-                        <div class="col-md-10">
-                          Model.Cloudinary.Api.BuildUploadForm("image_id", "auto",
-    new SortedDictionary<string, object>() { { "callback", cors_location } },
-    null)
-                          <asp:RequiredFieldValidator runat="server" ControlToValidate="DropDownListBrands" CssClass="text-danger" ErrorMessage="The brand field is required." />
-                        </div>
+                        <asp:Label runat="server" AssociatedControlID="UploadImage" CssClass="col-md-2 control-label">Image:</asp:Label>
+                        <asp:FileUpload ID="UploadImage" runat="server" />
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="UploadImage" CssClass="text-danger" ErrorMessage="The iamge field is required." />
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">

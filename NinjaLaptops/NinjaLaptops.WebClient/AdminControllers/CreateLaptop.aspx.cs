@@ -7,6 +7,7 @@ using System.Linq;
 using Owin;
 using NinjaLaptops.Data;
 using NinjaLaptops.Models;
+using System.IO;
 namespace NinjaLaptops.WebClient.AdminControllers
 {
     public partial class CreateLaptop : System.Web.UI.Page
@@ -26,15 +27,28 @@ namespace NinjaLaptops.WebClient.AdminControllers
             if (IsValid)
             {
                 //TODO: add file upload
-                var product = new Product();
-                product.BrandId = int.Parse(this.DropDownListBrands.SelectedValue);
-                product.Model = this.Model.Text;
-                product.Price = decimal.Parse(this.Price.Text);
-                product.PictureLink = "http://laptop.bg/system/images/13410/thumb/MacBook_Air_11_6.jpg";
+             
 
-                this.data.Products.Add(product);
-                this.data.SaveChanges();
-                Response.Redirect("/");
+                if (this.UploadImage.HasFile)
+                {
+                    if (this.UploadImage.PostedFile.ContentType == "image/jpeg" ||
+                       this.UploadImage.PostedFile.ContentType == "image/gif" ||
+                       this.UploadImage.PostedFile.ContentType == "image/png")
+                    {
+                        var product = new Product();
+                        product.BrandId = int.Parse(this.DropDownListBrands.SelectedValue);
+                        product.Model = this.Model.Text;
+                        product.Price = decimal.Parse(this.Price.Text);
+
+                        var filename =  product.Model + Path.GetExtension(this.UploadImage.FileName);
+                        this.UploadImage.SaveAs(this.Server.MapPath("~/Uploads/Images/") + filename);
+                        product.PictureLink = "Uploads/Images/" + filename;
+
+                        this.data.Products.Add(product);
+                        this.data.SaveChanges();
+                        Response.Redirect("/");
+                    }
+                }
             }
         }
     }
