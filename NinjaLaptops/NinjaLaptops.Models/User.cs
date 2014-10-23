@@ -9,6 +9,13 @@
 
     public class User : IdentityUser
     {
+        private ICollection<Product> products;
+
+        public User()
+        {
+            this.Products = new HashSet<Product>();
+        }
+
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -22,6 +29,17 @@
             return Task.FromResult(GenerateUserIdentity(manager));
         }
 
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Product> Products
+        {
+            get
+            {
+                return this.products;
+            }
+
+            set
+            {
+                this.products = value;
+            }
+        }
     }
 }

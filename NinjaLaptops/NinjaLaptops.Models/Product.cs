@@ -3,13 +3,11 @@ namespace NinjaLaptops.Models
 {
     public class Product
     {
-        private ICollection<Order> orders;
-
-
+        private ICollection<User> users;
 
         public Product()
         {
-            this.Orders = new HashSet<Order>();
+            this.Users = new HashSet<User>();
         }
 
         public int ProductId { get; set; }
@@ -24,16 +22,16 @@ namespace NinjaLaptops.Models
 
         public virtual Brand Brand { get; set; }
 
-        public virtual ICollection<Order> Orders
+        public virtual ICollection<User> Users
         {
             get
             {
-                return orders;
+                return users;
             }
 
             set
             {
-                orders = value;
+                users = value;
             }
         }
     }

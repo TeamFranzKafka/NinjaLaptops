@@ -37,14 +37,6 @@
             }
         }
 
-        public IRepository<Order> Orders
-        {
-            get
-            {
-                return this.GetRepository<Order>();
-            }
-        }
-
         public IRepository<Product> Products
         {
             get

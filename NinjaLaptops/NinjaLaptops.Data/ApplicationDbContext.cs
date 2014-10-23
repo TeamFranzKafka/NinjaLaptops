@@ -23,7 +23,5 @@
         public IDbSet<Brand> Brands { get; set; }
 
         public IDbSet<Product> Products { get; set; }
-
-        public IDbSet<Order> Orders { get; set; }
     }
 }

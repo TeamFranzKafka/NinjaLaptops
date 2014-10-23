@@ -8,8 +8,6 @@
 
         IRepository<Brand> Brands { get; }
 
-        IRepository<Order> Orders { get; }
-
         IRepository<Product> Products { get; }
 
         int SaveChanges();

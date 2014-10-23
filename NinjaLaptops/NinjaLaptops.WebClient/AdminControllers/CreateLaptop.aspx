@@ -27,35 +27,29 @@
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Price" CssClass="text-danger" ErrorMessage="The price field is required." />
                         </div>
                     </div>
-                   <div class="form-group">
+                    <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="DropDownListBrands" CssClass="col-md-2 control-label">Brand:</asp:Label>
                         <div class="col-md-10">
                             <asp:DropDownList runat="server" ID="DropDownListBrands" DataTextField="BrandName" DataValueField="BrandId" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="DropDownListBrands" CssClass="text-danger" ErrorMessage="The brand field is required." />
                         </div>
                     </div>
-                   <%-- <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <div class="checkbox">
-                                <asp:CheckBox runat="server" ID="RememberMe" />
-                                <asp:Label runat="server" AssociatedControlID="RememberMe">Remember me?</asp:Label>
-                            </div>
+
+                    <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="DropDownListBrands" CssClass="col-md-2 control-label">Brand:</asp:Label>
+                        <div class="col-md-10">
+                          Model.Cloudinary.Api.BuildUploadForm("image_id", "auto",
+    new SortedDictionary<string, object>() { { "callback", cors_location } },
+    null)
+                          <asp:RequiredFieldValidator runat="server" ControlToValidate="DropDownListBrands" CssClass="text-danger" ErrorMessage="The brand field is required." />
                         </div>
-                    </div>--%>
+                    </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button runat="server" OnClick="Create" Text="Create Laptop" CssClass="btn btn-default" />
                         </div>
                     </div>
                 </div>
-                <p>
-                    <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register as a new user</asp:HyperLink>
-                </p>
-                <p>
-                    <%-- Enable this once you have account confirmation enabled for password reset functionality
-                    <asp:HyperLink runat="server" ID="ForgotPasswordHyperLink" ViewStateMode="Disabled">Forgot your password?</asp:HyperLink>
-                    --%>
-                </p>
             </section>
         </div>
     </div>
