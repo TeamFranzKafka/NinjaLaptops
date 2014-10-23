@@ -12,20 +12,40 @@ namespace NinjaLaptops.WebClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var data = new NinjaLaptopsData();
+            if (!Page.IsPostBack)
+            {
+                var data = new NinjaLaptopsData();
 
-            this.BulletedListBrands.DataSource = data.Brands.All().ToList();
-            this.ListViewLaptops.DataSource = data.Products.All().ToList();
-
-            this.DataBind();
+                this.CheckBoxBrands.DataSource = data.Brands.All().ToList();
+                this.ListViewLaptops.DataSource = data.Products.All().ToList();
+                this.DataBind();
+            }
         }
 
-        protected void BulletedListBrands_Click(object sender, BulletedListEventArgs e)
+        protected void CheckBoxBrands_SelectedIndexChanged(object sender, EventArgs e)
         {
             var data = new NinjaLaptopsData();
 
-            this.ListViewLaptops.DataSource = data.Products.All().Where(p => p.BrandId == e.Index).ToList();
+            List<int> selectedBrandIds = new List<int>();
+            foreach (ListItem item in this.CheckBoxBrands.Items)
+            {
+                if (item.Selected)
+                {
+                    selectedBrandIds.Add(int.Parse(item.Value));
+                }
+            }
+
+            if (selectedBrandIds.Count > 0)
+            {
+                this.ListViewLaptops.DataSource = data.Products.All().Where(p => selectedBrandIds.Contains<int>(p.BrandId)).ToList();
+            }
+            else
+            {
+                this.ListViewLaptops.DataSource = data.Products.All().ToList();
+            }
+
             this.ListViewLaptops.DataBind();
+
         }
     }
 }
