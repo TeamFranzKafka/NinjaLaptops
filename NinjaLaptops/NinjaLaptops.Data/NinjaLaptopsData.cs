@@ -10,6 +10,11 @@
         private DbContext context;
         private IDictionary<Type, object> repositories;
 
+        public NinjaLaptopsData()
+            : this(new ApplicationDbContext())
+        {
+        }
+
         public NinjaLaptopsData(DbContext context)
         {
             this.context = context;
